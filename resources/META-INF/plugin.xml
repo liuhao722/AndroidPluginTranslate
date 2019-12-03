@@ -1,0 +1,59 @@
+<idea-plugin>
+
+    <!-- 插件唯一的id-->
+    <id>yunzhe.plugin.translate</id>
+
+    <!--插件显示的名字-->
+    <name>Translate</name>
+
+    <!--插件版本-->
+    <version>1.0</version>
+
+    <!--里面分别是邮箱，公司网站或个人网站，公司名-->
+    <vendor email="liuhao10@renmaitech.com" url="http://www.renmaitech.com">任买科技</vendor>
+
+    <description><![CDATA[
+      翻译Test、翻译Test、翻译Test、翻译Test、翻译Test、翻译Test、翻译Test、翻译Test、翻译Test
+    ]]></description>
+
+    <change-notes><![CDATA[
+            V1.0.0
+       <li>初始化项目，初始化项目，初始化项目，初始化项目，初始化项目，初始化项目</li>
+    ]]>
+    </change-notes>
+
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <action id="yunzhe.plugin.translation" class="yunzhe.plugin.translate.TranslateAction" text="Translater"
+                description="testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest">
+            <add-to-group group-id="CodeMenu" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl 1"/>
+        </action>
+        <action id="yunzhe.plugin.sg" class="yunzhe.plugin.translate.SetterAndGetterAction" text="SetterAndGetter"
+                description="SetterAndGetterSetterAndGetterSetterAndGetterSetterAndGetterSetterAndGetterSetterAndGetter">
+            <add-to-group group-id="CodeMenu" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl 2"/>
+        </action>
+        <action id="yunzhe.plugin.TestAction" class="yunzhe.plugin.translate.TestAction" text="Test"
+                description="fdasfdsafdsafdsfdasfdsafdfdasfdsafdsafdssafdsfdasfdsafdsafds">
+            <add-to-group group-id="GenerateGroup" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift meta 2"/>
+        </action>
+    </actions>
+
+</idea-plugin>
