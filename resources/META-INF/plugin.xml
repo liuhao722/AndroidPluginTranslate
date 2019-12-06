@@ -49,11 +49,6 @@
             <add-to-group group-id="CodeMenu" anchor="first"/>
             <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl 2"/>
         </action>
-        <action id="yunzhe.plugin.TestAction" class="yunzhe.plugin.translate.TestAction" text="Test"
-                description="fdasfdsafdsafdsfdasfdsafdfdasfdsafdsafdssafdsfdasfdsafdsafds">
-            <add-to-group group-id="GenerateGroup" anchor="first"/>
-            <keyboard-shortcut keymap="$default" first-keystroke="shift meta 2"/>
-        </action>
     </actions>
 
 </idea-plugin>
