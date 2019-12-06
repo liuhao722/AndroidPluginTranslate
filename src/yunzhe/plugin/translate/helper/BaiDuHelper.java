@@ -1,9 +1,8 @@
 package yunzhe.plugin.translate.helper;
 
-import org.codehaus.jettison.json.JSONArray;
-import org.codehaus.jettison.json.JSONException;
-import org.codehaus.jettison.json.JSONObject;
+import com.google.gson.Gson;
 import yunzhe.plugin.translate.baidu.TransApi;
+import yunzhe.plugin.translate.entitys.BaiDuTranslateEntity;
 
 /**
  * Author:  LiuHao
@@ -45,20 +44,21 @@ public class BaiDuHelper {
 
     /**
      * 解析
+     *
      * @param json 从百度api中获取的翻译结果
      */
     public static String parseJson(String json) {
         print("翻译获取源数据:" + json);
-        try {
-            JSONObject jsonObject = new JSONObject(json);
-            JSONArray trans_result = jsonObject.optJSONArray("trans_result");
-            JSONObject firstResult = trans_result.optJSONObject(0);
-            String result = firstResult.optString("dst");
-            return result;
-        } catch (JSONException e) {
-            e.printStackTrace();
+        BaiDuTranslateEntity entity = new Gson().fromJson(json, BaiDuTranslateEntity.class);
+        if (entity != null && entity.trans_result != null && entity.trans_result.size() > 0) {
+            return entity.trans_result.get(0).dst;
         }
         return null;
+
+//        JSONObject jsonObject = new JSONObject(json);
+//        JSONArray trans_result = jsonObject.optJSONArray("trans_result");
+//        JSONObject firstResult = trans_result.optJSONObject(0);
+//        String result = firstResult.optString("dst");
 
     }
 
